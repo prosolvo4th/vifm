@@ -1,9 +1,11 @@
 #!/bin/bash
-# CPPFLAGS=' -I/tmp/ncurses_out_path/include/ncursesw ' \
 
 ARCH=arm \
 CROSS=/home/user/Projects/ADIT-JV/android-1/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu-7.1/bin/aarch64-linux-gnu- \
-CPPFLAGS=' -I/home/user/Projects/ADIT-JV/android-1/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu/libc/usr/include ' \
+CPPFLAGS=' -Wl,-dynamic-linker,/system/bin/linker64 -I/home/user/Projects/ADIT-JV/android-1/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu/libc/usr/include ' \
+CFLAGS=' -Wl,-dynamic-linker,/system/bin/linker64 ' \
+CXXFLAGS=' -Wl,-dynamic-linker,/system/bin/linker64 ' \
+LDFLAGS=' -dynamic-linker,/system/bin/linker64 ' \
 ./configure \
 --without-x --disable-shared --enable-static \
 --host=arm-linux-gnueabi \
