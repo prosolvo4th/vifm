@@ -1,0 +1,14 @@
+#!/bin/bash
+# CPPFLAGS=' -I/tmp/ncurses_out_path/include/ncursesw ' \
+
+ARCH=arm \
+CROSS=/home/user/Projects/ADIT-JV/android-1/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu-7.1/bin/aarch64-linux-gnu- \
+CPPFLAGS=' -I/home/user/Projects/ADIT-JV/android-1/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu/libc/usr/include ' \
+./configure \
+--without-x --disable-shared --enable-static \
+--host=arm-linux-gnueabi \
+--with-curses-name=ncursesw \
+--with-curses=/tmp/ncurses_out_path \
+--prefix=/tmp/vifm_out_path \
+#make LDFLAGS=-all-static
+#make LDFLAGS=-all-static install
